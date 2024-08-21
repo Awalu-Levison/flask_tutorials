@@ -1,10 +1,10 @@
 from flask import Flask, render_template, url_for, flash, redirect
 from forms import RegistrationForm, LoginForm
+
 app = Flask(__name__)
 
 """Set up secret key to avoid cross site scripting attacks"""
 app.config['SECRET_KEY'] = '82f3b2a95b230b4941abe57a985edebc'
-
 
 posts = [
     {
@@ -39,9 +39,11 @@ def register():
         return redirect(url_for('home'))
     return render_template('register.html', title='Register', form=form)
 
-@app.route("/login")
+@app.route("/login", methods=['GET', 'POST'])
 def login():
     form = LoginForm()
+    if form.validate_on_submit():
+        return redirect(url_for('home'))
     return render_template('login.html', title='Login', form=form)
 
 
