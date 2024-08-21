@@ -1,21 +1,20 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 app = Flask(__name__)
 
 posts = [
-
-        {
-            'author': 'Awalu Levison',
-            'title': 'My Blog Post 1',
-            'content': 'First post content',
-            'date_posted': 'Augut 3, 2024'
-        },
-        {
-            'author': 'Innocent Mkuleza',
-            'title': 'My Blog Post 2',
-            'content': 'Second post content',
-            'date_posted': 'Augut 4, 2024'
-        }
-]
+    {
+        'author': 'Awalu Levison',
+        'title': 'My Blog Post 1',
+        'content': 'First post content',
+        'date_posted': 'Augut 3, 2024'
+    },
+    {
+        'author': 'Innocent Mkuleza',
+        'title': 'My Blog Post 2',
+        'content': 'Second post content',
+        'date_posted': 'Augut 4, 2024'
+    }
+    ]
 
 @app.route("/")
 @app.route("/home")
