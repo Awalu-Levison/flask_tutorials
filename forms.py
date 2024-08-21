@@ -1,5 +1,6 @@
+from types import MethodType
 from flask_wtf import FlaskForm
-from wtforms import EmailField, StringField, PasswordField
+from wtforms import EmailField, StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Length, Email, EqualTo
 
 
@@ -13,5 +14,4 @@ class RegistrationForm(FlaskForm):
                              validators=[DataRequired()])
     confirm_password = PasswordField('Confirm Password',
                              validators=[DataRequired(), EqualTo('Password')])
-                             
-    
+    submit = SubmitField('Sign Up')
