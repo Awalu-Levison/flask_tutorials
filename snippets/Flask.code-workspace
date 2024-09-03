@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"name": "flask_tutorials",
+			"path": ".."
+		}
+	],
+	"settings": {}
+}
